@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <script src="https://unpkg.com/htmx.org@1.9.5"
+        integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div hx-target="this" hx-swap="outerHTML">
+        <div><label>Name</label>: <%== @name %></div>
+        <button hx-get="/contacts/1/edit" class="btn btn-primary">
+            Edit
+        </button>
+    </div>
+</body>
+
+</html>

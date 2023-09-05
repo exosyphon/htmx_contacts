@@ -1,0 +1,8 @@
+<form hx-put="/contacts/1" hx-target="this" hx-swap="outerHTML">
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" value=<%== @name %>>
+    </div>
+    <button class="btn">Submit</button>
+    <button class="btn" hx-get="/contacts/1">Cancel</button>
+</form>
