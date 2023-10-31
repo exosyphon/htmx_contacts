@@ -1,4 +1,6 @@
 <div class="htmx-indicator">Updating...</div>
 <% @items.each do |item| %>
-  <div><input type='hidden' name='item[]' value="<%= item %>"/>Item <%= item %></div> 
+  <div style="border:1px solid #DEDEDE; padding:12px; margin: 8px; width:200px; cursor: grab">
+    <input type='hidden' name='item[]' value="<%= item %>"/>Item <%= item %>
+  </div>
 <% end %>
