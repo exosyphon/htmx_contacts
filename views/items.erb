@@ -36,12 +36,14 @@
 </head>
 
 <body>
-    <div hx-target="this" hx-swap="outerHTML">
-        <div><label>Name</label>: <%== @name %></div>
-        <button hx-get="/contacts/1/edit" class="btn btn-primary">
-            Edit
-        </button>
-    </div>
+  <form class="sortable" hx-post="/items" hx-trigger="end">
+    <div class="htmx-indicator">Updating...</div>
+    <div><input type='hidden' name='item[]' value='1'/>Item 1</div>
+    <div><input type='hidden' name='item[]' value='2'/>Item 2</div>
+    <div><input type='hidden' name='item[]' value='3'/>Item 3</div>
+    <div><input type='hidden' name='item[]' value='4'/>Item 4</div>
+    <div><input type='hidden' name='item[]' value='5'/>Item 5</div>
+  </form>      
 </body>
 
 </html>

@@ -1,28 +1,38 @@
-require 'sinatra'
-require 'erb'
+require "sinatra"
+require "erb"
 
-get '/' do
+get "/items" do
+  erb :items
+end
+
+post "/items" do
+  @items = params[:item]
+
+  erb :items_partial
+end
+
+get "/" do
   @contacts = read_contacts
-  @name = @contacts.size > 0 ? @contacts[-1] : ''
+  @name = (@contacts.size > 0) ? @contacts[-1] : ""
 
   erb :contacts
 end
 
-get '/contacts/:id' do
+get "/contacts/:id" do
   @contacts = read_contacts
-  @name = @contacts.size > 0 ? @contacts[-1] : ''
+  @name = (@contacts.size > 0) ? @contacts[-1] : ""
 
   erb :contact_show
 end
 
-get '/contacts/:id/edit' do
+get "/contacts/:id/edit" do
   @contacts = read_contacts
-  @name = @contacts.size > 0 ? @contacts[-1] : ''
+  @name = (@contacts.size > 0) ? @contacts[-1] : ""
 
   erb :contact_edit
 end
 
-put '/contacts/:id' do
+put "/contacts/:id" do
   @name = params[:name]
   store_contact(@name)
   erb :contact_show
